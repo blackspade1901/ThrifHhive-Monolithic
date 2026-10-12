@@ -1,0 +1,29 @@
+{
+  "name": "thrifthive-server",
+  "version": "1.0.0",
+  "description": "ThriftHive backend API — Node.js, Express, MongoDB (layered architecture)",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "seed": "node scripts/seed.js",
+    "test": "cross-env NODE_ENV=test node --experimental-vm-modules node_modules/.bin/jest --runInBand"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.0",
+    "pino": "^9.3.1",
+    "pino-http": "^10.2.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^29.7.0",
+    "mongodb-memory-server": "^9.4.1",
+    "pino-pretty": "^11.2.1",
+    "supertest": "^7.0.0"
+  }
+}

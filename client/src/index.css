@@ -1,0 +1,134 @@
+:root {
+  /* Color tokens — kraft-paper / price-tag palette, not the generic AI cream+terracotta look */
+  --color-bg: #f3ede0;
+  --color-surface: #fffdf8;
+  --color-ink: #22303b;
+  --color-ink-soft: #55636d;
+  --color-accent: #d9a441; /* mustard gold — price-tag string & highlights */
+  --color-accent-ink: #6b4c14;
+  --color-available: #3f6b54; /* moss green — item available */
+  --color-sold: #8a8377; /* warehouse grey-brown — item sold */
+  --color-danger: #a8432f;
+  --color-border: #ddd3bd;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Space Grotesk", sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --shadow-tag: 0 6px 14px rgba(34, 48, 59, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  margin: 0;
+}
+
+.app-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px 64px;
+}
+
+.page-heading {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 600;
+  margin: 32px 0 20px;
+}
+
+.state-message {
+  padding: 40px 0;
+  text-align: center;
+  color: var(--color-ink-soft);
+  font-size: 1.05rem;
+}
+
+.state-message.error {
+  color: var(--color-danger);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--color-ink);
+  color: var(--color-surface);
+}
+
+.btn-primary:hover {
+  box-shadow: var(--shadow-tag);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-ink);
+  border: 1.5px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-ink);
+}
+
+.btn-danger-outline {
+  background: transparent;
+  color: var(--color-danger);
+  border: 1.5px solid var(--color-danger);
+  padding: 6px 14px;
+  font-size: 0.85rem;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 0 16px 48px;
+  }
+}
